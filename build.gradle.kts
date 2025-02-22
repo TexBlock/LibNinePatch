@@ -85,12 +85,12 @@ publishing {
     }
 
     repositories {
-        maven {
-            name = "ossrh"
-            url = uri("https://oss.sonatype.org/service/local/staging/deploy/maven2/")
-
-            credentials(PasswordCredentials::class)
-        }
+//        maven {
+//            name = "ossrh"
+//            url = uri("https://oss.sonatype.org/service/local/staging/deploy/maven2/")
+//
+//            credentials(PasswordCredentials::class)
+//        }
     }
 }
 
@@ -132,13 +132,13 @@ tasks {
         classpath = modularitySources.compileClasspath
     }
 
-    processResources {
-        inputs.property("version", version)
-
-        filesMatching("fabric.mod.json") {
-            expand("version" to version)
-        }
-    }
+//    processResources {
+//        inputs.property("version", version)
+//
+//        filesMatching("fabric.mod.json") {
+//            expand("version" to version)
+//        }
+//    }
 
     register<JavaExec>("runDemo") {
         classpath(demoSources.output)
